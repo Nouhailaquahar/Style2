@@ -1,13 +1,11 @@
-var customButton = document.createElement("button");
-customButton.innerHTML = "Mon Bouton";
-customButton.className = "custom-button";
+// Créez un élément div pour contenir le bouton
+var customButtonContainer = document.createElement("div");
 
-// Définissez l'action à effectuer lorsque le bouton est cliqué
-customButton.addEventListener("click", function() {
-    // Ajoutez ici l'action que vous souhaitez exécuter lors du clic sur le bouton
-    alert("Le bouton a été cliqué !");
-});
+// Injectez le code HTML du bouton dans l'élément div
+customButtonContainer.innerHTML = `
+    <button class="custom-button">Mon Bouton</button>
+`;
 
-// Ajoutez le bouton à la page d'accueil
+// Ajoutez l'élément div à la page d'accueil
 var homePage = document.getElementById("page-home");
-homePage.appendChild(customButton);
+homePage.appendChild(customButtonContainer);
