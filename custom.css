@@ -1,13 +1,4 @@
 /* Style du bouton */
-#jenkins{
+body{
     background-color: #98b9db; /* Couleur de fond */    
-}
-.custom-button-test {
-    background-color: #007bff; /* Couleur de fond */
-    color: white; /* Couleur du texte */
-    padding: 10px 20px; /* Espacement intérieur */
-    border: none; /* Supprime la bordure */
-    height: 120px;
-    width: 70px;
-    cursor: pointer; /* Curseur de la souris */
 }
