@@ -12,6 +12,7 @@ pipeline {
                     if (fileExists(scriptPath)) {
                         // Exécution du script JavaScript avec Node.js
                        echo'le fichier existe'
+                          sh "node ${scriptPath}"
                     } else {
                         echo'le fichier n existe pas'
                     }
