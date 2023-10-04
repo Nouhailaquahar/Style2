@@ -15,14 +15,7 @@ pipeline {
         }
         stage('Run JavaScript') {
             steps {
-                script {
-                    /*
-                    // Étape pour exécuter le fichier JavaScript
-                    def nodejsHome = tool name: 'NodeJS', type: 'ToolInstallation'
-                  sh "${nodejsHome}/bin/node custom.js"
-                  */
-                    alert(1)
-                }
+                echo"bonjour"
             }
         }
     }
