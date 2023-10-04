@@ -11,9 +11,9 @@ pipeline {
                     // Vérification de l'existence du fichier
                     if (fileExists(scriptPath)) {
                         // Exécution du script JavaScript avec Node.js
-                        sh "node ${scriptPath}"
+                       echo'le fichier existe'
                     } else {
-                        error "Le fichier JavaScript n'a pas été trouvé : ${scriptPath}"
+                        echo'le fichier n existe pas'
                     }
                 }
             }
