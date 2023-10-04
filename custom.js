@@ -1,3 +1,4 @@
+/*
 // Créez un élément div pour contenir le bouton
 var customButtonContainer = document.createElement("div");
 
@@ -12,3 +13,5 @@ customButtonContainer.innerHTML = `
 // Ajoutez l'élément div à la page d'accueil
 var homePage = document.getElementById("page-home");
 homePage.appendChild(customButtonContainer);
+*/
+alert(1);
