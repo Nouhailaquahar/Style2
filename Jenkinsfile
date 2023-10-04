@@ -1,29 +1,22 @@
-
 pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+        stage('Exécution du script JavaScript') {
             steps {
-                // Étape pour vérifier le code depuis le référentiel Git
-                checkout scm
+                script {
+                    // Chemin du fichier JavaScript dans le même répertoire que le Jenkinsfile
+                    def scriptPath = './custom.js'
+
+                    // Vérification de l'existence du fichier
+                    if (fileExists(scriptPath)) {
+                        // Exécution du script JavaScript avec Node.js
+                        sh "node ${scriptPath}"
+                    } else {
+                        error "Le fichier JavaScript n'a pas été trouvé : ${scriptPath}"
+                    }
+                }
             }
-        }
-        stage('Build and Test') {
-            steps {
-                // Éventuelles étapes de construction et de test de votre application
-            }
-        }
-        stage('Run JavaScript') {
-            steps {
-script {
-                    /*
-                    // Étape pour exécuter le fichier JavaScript
-                    def nodejsHome = tool name: 'NodeJS', type: 'ToolInstallation'
-                  sh "${nodejsHome}/bin/node custom.js"
-                  */
-                    alert(1)
-                }            }
         }
     }
 }
