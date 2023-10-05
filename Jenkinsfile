@@ -22,11 +22,11 @@ stage('Build and Execute JS') {
             } else {
                 currentBuild.result = 'FAILURE'
                 error('Échec de l\'exécution du script JS')
+        
             }
-             currentBuild.description = "<h1>Résultat du script JS : ${scriptResult == 0 ? 'Succès' : 'Échec'}</h1>"
+                  
+    }currentBuild.description = "<h1>Résultat du script JS : ${scriptResult == 0 ? 'Succès' : 'Échec'}</h1>".getBytes("UTF-8").toString("UTF-8")
 
-        }
-    }
 }
 
 
