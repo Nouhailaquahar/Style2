@@ -18,16 +18,21 @@ pipeline {
 
                     if (scriptResult == 0) {
                         currentBuild.result = 'SUCCESS'
-                        echo 'Le script js a été exécuté avec succès'
+                        echo 'Le script js a ete  execute avec succes'
                     } else {
                         currentBuild.result = 'FAILURE'
                         error('Échec de l\'exécution du script JS')
                     }
-
-                    // Utilisez l'encodage correct pour le message HTML
-                    currentBuild.description = "<h1>Résultat du script JS : ${scriptResult == 0 ? 'Succès' : 'Échec'}</h1>".getBytes("UTF-8").toString("UTF-8")
                 }
             }
+               stage('Hello World') {
+            steps {
+                script {
+                    // Affiche un message "Bonjour" dans la description
+                    currentBuild.description = "<h1>Bonjour</h1>".getBytes("UTF-8").toString("UTF-8")
+                }
+            }
+        }
         }
     }
 }
