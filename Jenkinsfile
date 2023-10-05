@@ -56,15 +56,13 @@ pipeline {
                 }
             }
         }*/
-     stage('Afficher un message HTML') {
+stage('Afficher un message HTML') {
             steps {
                 script {
-                    writeFile file: 'index.html', text: '<html><h1>Hello</h1></html>'
-                    publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: '', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+                    currentBuild.description = '<h1>Hello</h1>'
                 }
             }
         }
-      
-          //fink
+        //fink
     }
 }
