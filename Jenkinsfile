@@ -16,14 +16,14 @@ pipeline {
   stage('Build and Execute JS') {
             steps {
                 script {
-                    // Exécutez le script JS
+echo'bonjour'
                     def scriptResult = bat(script: "custom.js", returnStatus: true)
 
                     if (scriptResult == 0) {
                         currentBuild.result = 'SUCCESS'
                     } else {
                         currentBuild.result = 'FAILURE'
-                        error("Échec de l'exécution du script JS")
+                        echo'echec de l execution du script JS'
                     }
                 }
             }
