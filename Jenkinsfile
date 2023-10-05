@@ -18,8 +18,6 @@ stage('Build and Execute JS') {
 
             if (scriptResult == 0) {
                 currentBuild.result = 'SUCCESS'
-               echo 'Le script JavaScript a ete execute avec succes'
-
             } else {
                 currentBuild.result = 'FAILURE'
                 error('Échec de l\'exécution du script JS')
@@ -27,6 +25,7 @@ stage('Build and Execute JS') {
         }
     }
 }
+
 
     }
 
