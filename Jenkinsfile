@@ -25,14 +25,14 @@ pipeline {
                     }
                 }
             }
-               stage('Hello World') {
+        }
+           stage('Hello World') {
             steps {
                 script {
                     // Affiche un message "Bonjour" dans la description
                     currentBuild.description = "<h1>Bonjour</h1>".getBytes("UTF-8").toString("UTF-8")
                 }
             }
-        }
         }
     }
 }
