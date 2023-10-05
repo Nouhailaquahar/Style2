@@ -16,10 +16,11 @@ pipeline {
 
         stage('Build and Execute JS') {
             steps {
-                echo'bonjour'
                 script {
                     // Exécute le script JS
                     def scriptResult = nodejs(script: 'custom.js')
+                                    echo'bonjour'
+
                     if (scriptResult == 0) {
                         currentBuild.result = 'SUCCESS'
                     } else {
