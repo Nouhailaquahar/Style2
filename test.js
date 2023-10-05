@@ -8,4 +8,4 @@
     header.appendChild(customButton);
 });
 */
-console.log("c'est fichier custom.js");
+console.log("c'est fichier test.js");
