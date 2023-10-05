@@ -9,3 +9,4 @@
 });
 */
 alert(1);
+alert("bonjour");
