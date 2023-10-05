@@ -13,16 +13,12 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Build and Execute JS') {
+  stage('Build and Execute JS') {
             steps {
-                 echo'avant'
-
                 script {
-                    // Exécute le script JS
-                     echo'debut script'
-                    def scriptResult = nodejs(script: 'custom.js')
-                                    echo'apres'
-
+                    def scriptFile = readFile('custom.js')
+                    def scriptResult = bat(script: "node %WORKSPACE%\\custom.js", returnStatus: true)
+                    
                     if (scriptResult == 0) {
                         currentBuild.result = 'SUCCESS'
                     } else {
@@ -33,6 +29,7 @@ pipeline {
             }
         }
     }
+       
 
   
 }
