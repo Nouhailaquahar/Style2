@@ -18,12 +18,13 @@ stage('Build and Execute JS') {
 
             if (scriptResult == 0) {
                 currentBuild.result = 'SUCCESS'
-                currentBuild.description = "<h1>c'est fichier test.js</h1>"
                 echo 'Le script js a ete execute avec succes'
             } else {
                 currentBuild.result = 'FAILURE'
                 error('Échec de l\'exécution du script JS')
             }
+             currentBuild.description = "<h1>Résultat du script JS : ${scriptResult == 0 ? 'Succès' : 'Échec'}</h1>"
+
         }
     }
 }
