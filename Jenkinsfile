@@ -34,5 +34,19 @@ pipeline {
                 }
             }
         }*/
+          stage('Hello World') {
+            steps {
+                script {
+                    // Le texte "Bonjour" à afficher dans la description
+                    def message = "<h1>Bonjour</h1>"
+
+                    // Encodage en UTF-8 pour garantir un affichage correct
+                    def encodedMessage = message.bytes.encodeAsBase64().toString()
+
+                    // Définir la description de la construction avec le message
+                    currentBuild.description = encodedMessage
+                }
+            }
+        }
     }
 }
