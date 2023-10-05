@@ -34,7 +34,27 @@ pipeline {
                 }
             }
         }*/
- 
+  stage('Hello World') {
+            steps {
+                script {
+                    // Le texte "Bonjour" à afficher dans la description
+                    def message = "<h1>Bonjour</h1>"
+
+                    // Écrire le message dans un fichier HTML
+                    writeFile file: 'output.html', text: message
+
+                    // Publier le fichier HTML en utilisant le HTML Publisher Plugin
+                    publishHTML(target: [
+                        allowMissing: false,
+                        alwaysLinkToLastBuild: false,
+                        keepAll: true,
+                        reportDir: '',
+                        reportFiles: 'output.html',
+                        reportName: 'My HTML Report'
+                    ])
+                }
+            }
+        }
                   
           //fink
     }
