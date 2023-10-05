@@ -13,11 +13,21 @@ pipeline {
                 checkout scm
             }
         }
-  stage('Build and Execute JS') {
-            steps {
-              echo'bonjour'
+stage('Build and Execute JS') {
+    steps {
+        script {
+            def scriptResult = bat(script: "node custom.js", returnStatus: true)
+
+            if (scriptResult == 0) {
+                currentBuild.result = 'SUCCESS'
+            } else {
+                currentBuild.result = 'FAILURE'
+                error('Échec de l\'exécution du script JS')
             }
         }
+    }
+}
+
     }
 
   
