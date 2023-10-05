@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    tools {
+        // Configure le chemin vers Node.js en utilisant le nom de l'outil défini dans Jenkins
+        nodejs '16.13.0'
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -12,15 +17,7 @@ pipeline {
         stage('Build and Execute JS') {
             steps {
                 // Exécuter le script JS
-                script {
-                    def output = sh(script: 'node custom.js', returnStatus: true)
-                    if (output == 0) {
-                        currentBuild.result = 'SUCCESS'
-                    } else {
-                        currentBuild.result = 'FAILURE'
-                        error("Échec de l'exécution du script JS")
-                    }
-                }
+                sh 'nodecustom.js'
             }
         }
     }
