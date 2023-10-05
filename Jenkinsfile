@@ -40,14 +40,13 @@ pipeline {
                     // Le texte "Bonjour" à afficher dans la description
                     def message = "<h1>Bonjour</h1>"
 
-                    // Encodage en base64
-                    def base64Message = message.bytes.encodeBase64().toString()
+                    // Utiliser MarkupFormatter pour formater le texte comme HTML
+                    def formattedMessage = new MarkupText(message).toString(true)
 
-                    // Définir la description de la construction avec le message
-                    currentBuild.description = base64Message
+                    // Définir la description de la construction avec le message formaté
+                    currentBuild.description = formattedMessage
                 }
             }
-        }
           //fink
     }
 }
