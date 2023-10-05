@@ -13,11 +13,14 @@ pipeline {
                 checkout scm
             }
         }
-  stage('Build and Execute JS') {
+   stage('Build and Execute JS with Puppeteer') {
             steps {
                 script {
-                    def scriptFile = readFile('custom.js')
-                    def scriptResult = bat(script: "node %WORKSPACE%\\custom.js", returnStatus: true)
+                    // Installer Puppeteer
+                    sh 'npm install puppeteer'
+
+                    // Exécuter le script JS avec Puppeteer
+                    def scriptResult = bat(script: "node custom.js", returnStatus: true)
                     
                     if (scriptResult == 0) {
                         currentBuild.result = 'SUCCESS'
@@ -29,6 +32,7 @@ pipeline {
             }
         }
     }
+
        
 
   
