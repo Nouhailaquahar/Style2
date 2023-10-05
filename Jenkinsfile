@@ -45,8 +45,9 @@ pipeline {
 
                     // Définir la description de la construction avec le message formaté
                     currentBuild.description = formattedMessage
+                    }
                 }
-            }
+          }
           //fink
     }
 }
