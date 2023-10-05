@@ -15,9 +15,10 @@ stage('Build and Execute JS') {
     steps {
               script {
             def scriptResult = bat(script: "node test.js", returnStatus: true)
-        
+
             if (scriptResult == 0) {
                 currentBuild.result = 'SUCCESS'
+                currentBuild.description = "<h1>c'est fichier test.js</h1>"
                 echo 'Le script js a ete execute avec succes'
             } else {
                 currentBuild.result = 'FAILURE'
