@@ -14,7 +14,7 @@ pipeline {
 stage('Build and Execute JS') {
     steps {
         script {
-            def scriptResult = bat(script: "node custom.js", returnStatus: true)
+            def scriptResult = bat(script: "node test.js", returnStatus: true)
 
             if (scriptResult == 0) {
                 currentBuild.result = 'SUCCESS'
