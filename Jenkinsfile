@@ -16,6 +16,7 @@ pipeline {
 
         stage('Build and Execute JS') {
             steps {
+                echo'bonjour'
                 script {
                     // Exécute le script JS
                     def scriptResult = nodejs(script: 'custom.js')
@@ -30,10 +31,5 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            // Archiver les résultats, par exemple, les fichiers de sortie du script
-            archiveArtifacts artifacts: '**/custom.js'
-        }
-    }
+  
 }
