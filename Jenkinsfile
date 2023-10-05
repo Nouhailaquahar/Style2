@@ -25,7 +25,7 @@ pipeline {
                     }
                 }
             }
-        }
+        }/*
            stage('Hello World') {
             steps {
                 script {
@@ -33,6 +33,6 @@ pipeline {
                     currentBuild.description = "<h1>Bonjour</h1>".getBytes("UTF-8").toString("UTF-8")
                 }
             }
-        }
+        }*/
     }
 }
