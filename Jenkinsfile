@@ -16,8 +16,16 @@ pipeline {
 
         stage('Build and Execute JS') {
             steps {
-                // Exécuter le script JS
-                sh 'nodecustom.js'
+                script {
+                    // Exécute le script JS
+                    def scriptResult = nodejs(script: 'custom.js')
+                    if (scriptResult == 0) {
+                        currentBuild.result = 'SUCCESS'
+                    } else {
+                        currentBuild.result = 'FAILURE'
+                        error("Échec de l'exécution du script JS")
+                    }
+                }
             }
         }
     }
@@ -25,7 +33,7 @@ pipeline {
     post {
         always {
             // Archiver les résultats, par exemple, les fichiers de sortie du script
-            archiveArtifacts artifacts: '**/votre_script.js'
+            archiveArtifacts artifacts: '**/custom.js'
         }
     }
 }
