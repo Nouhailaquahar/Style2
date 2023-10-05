@@ -8,5 +8,4 @@
     header.appendChild(customButton);
 });
 */
-alert(1);
-alert("bonjour");
+console.log("Bonjour");
