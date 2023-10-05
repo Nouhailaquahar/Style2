@@ -7,9 +7,9 @@
     var header = document.querySelector(".header");
     header.appendChild(customButton);
 });
-
-console.log("c'est fichier test.js");*/
-const puppeteer = require('puppeteer');
+*/
+console.log("c'est fichier test.js");
+/*const puppeteer = require('puppeteer');
 
 (async () => {
   const browser = await puppeteer.launch();
@@ -22,4 +22,4 @@ const puppeteer = require('puppeteer');
   });
   await browser.close();
 })();
-console.log("c'est fichier test.js")
+console.log("c'est fichier test.js")*/
