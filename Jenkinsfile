@@ -13,9 +13,10 @@ pipeline {
                 checkout scm
             }
         }
- echo'avant'
         stage('Build and Execute JS') {
             steps {
+                 echo'avant'
+
                 script {
                     // Exécute le script JS
                      echo'debut script'
