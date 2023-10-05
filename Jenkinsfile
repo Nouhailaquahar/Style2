@@ -57,7 +57,6 @@ pipeline {
             }
         }*/
    
-    stages {
         stage('Afficher un message HTML') {
             steps {
                 script {
@@ -74,8 +73,7 @@ pipeline {
                     '''
                 }
             }
-        }
-
+        
           //fink
     }
 }
