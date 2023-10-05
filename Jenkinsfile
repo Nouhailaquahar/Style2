@@ -34,20 +34,8 @@ pipeline {
                 }
             }
         }*/
-  stage('Hello World') {
-            steps {
-                script {
-                    // Le texte "Bonjour" à afficher dans la description
-                    def message = "<h1>Bonjour</h1>"
-
-                    // Utiliser MarkupFormatter pour formater le texte comme HTML
-                    def formattedMessage = new MarkupText(message).toString(true)
-
-                    // Définir la description de la construction avec le message formaté
-                    currentBuild.description = formattedMessage
-                    }
-                }
-          }
+ 
+                  
           //fink
     }
 }
