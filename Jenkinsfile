@@ -2,22 +2,33 @@ pipeline {
     agent any
 
     stages {
-        stage('Exécution du script JavaScript') {
+        stage('Checkout') {
             steps {
-                script {
-                    // Chemin du fichier JavaScript dans le même répertoire que le Jenkinsfile
-                    def scriptPath = './custom.js'
+                // Récupérer le code source depuis le dépôt Git
+                checkout scm
+            }
+        }
 
-                    // Vérification de l'existence du fichier
-                    if (fileExists(scriptPath)) {
-                        // Exécution du script JavaScript avec Node.js
-                       echo'le fichier existe'
-                          sh "node ${scriptPath}"
+        stage('Build and Execute JS') {
+            steps {
+                // Exécuter le script JS
+                script {
+                    def output = sh(script: 'node votre_script.js', returnStatus: true)
+                    if (output == 0) {
+                        currentBuild.result = 'SUCCESS'
                     } else {
-                        echo'le fichier n existe pas'
+                        currentBuild.result = 'FAILURE'
+                        error("Échec de l'exécution du script JS")
                     }
                 }
             }
+        }
+    }
+
+    post {
+        always {
+            // Archiver les résultats, par exemple, les fichiers de sortie du script
+            archiveArtifacts artifacts: '**/votre_script.js'
         }
     }
 }
