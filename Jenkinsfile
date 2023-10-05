@@ -33,7 +33,8 @@ pipeline {
                     currentBuild.description = "<h1>Bonjour</h1>".getBytes("UTF-8").toString("UTF-8")
                 }
             }
-        }*/
+        }*
+        /*affichach sans resultat
   stage('Hello World') {
             steps {
                 script {
@@ -54,8 +55,27 @@ pipeline {
                     ])
                 }
             }
+        }*/
+   
+    stages {
+        stage('Afficher un message HTML') {
+            steps {
+                script {
+                    sh '''
+                        npm install puppeteer
+                        node -e "const puppeteer = require('puppeteer'); 
+                        (async () => {
+                            const browser = await puppeteer.launch();
+                            const page = await browser.newPage(); 
+                            await page.setContent('<h1>Hello from HTML</h1>'); 
+                            await page.screenshot({ path: 'screenshot.png' }); 
+                            await browser.close();
+                        })();"
+                    '''
+                }
+            }
         }
-                  
+
           //fink
     }
 }
