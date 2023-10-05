@@ -13,13 +13,14 @@ pipeline {
                 checkout scm
             }
         }
-
+ echo'avant'
         stage('Build and Execute JS') {
             steps {
                 script {
                     // Exécute le script JS
+                     echo'debut script'
                     def scriptResult = nodejs(script: 'custom.js')
-                                    echo'bonjour'
+                                    echo'apres'
 
                     if (scriptResult == 0) {
                         currentBuild.result = 'SUCCESS'
