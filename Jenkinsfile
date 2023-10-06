@@ -56,12 +56,13 @@ pipeline {
                 }
             }
         }*/
-    stage('Add Div to HTML') {
+ 
+        stage('Add Div to HTML') {
             steps {
-              script {
-                    def htmlContent = readFile('testDiv.html')
-                    htmlContent = htmlContent.replaceFirst('<!-- Your placeholder -->', '<div>Your Div Content</div>')
-                    writeFile file: 'testDiv.html', text: htmlContent
+                script {
+                    def htmlContent = readFile('votre_fichier.html')
+                    htmlContent = htmlContent.replaceFirst('<div id="side-panel">', '<div id="side-panel">\n<div style="background-color: red;">Votre Div Content</div>')
+                    writeFile file: 'votre_fichier.html', text: htmlContent
                 }
             }
         }
