@@ -60,9 +60,9 @@ pipeline {
         stage('Add Div to HTML') {
             steps {
                 script {
-                    def htmlContent = readFile('votre_fichier.html')
+                    def htmlContent = readFile('testDiv.html')
                     htmlContent = htmlContent.replaceFirst('<div id="side-panel">', '<div id="side-panel">\n<div style="background-color: red;">Votre Div Content</div>')
-                    writeFile file: 'votre_fichier.html', text: htmlContent
+                    writeFile file: 'testDiv.html', text: htmlContent
                 }
             }
         }
