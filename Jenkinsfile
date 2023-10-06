@@ -13,7 +13,7 @@ pipeline {
         }
 stage('Build and Execute JS') {
     steps {
-          script {
+              script {
             def scriptResult = bat(script: "node test.js", returnStatus: true)
         
             if (scriptResult == 0) {
