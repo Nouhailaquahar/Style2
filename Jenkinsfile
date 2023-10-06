@@ -11,7 +11,7 @@ pipeline {
                 checkout scm
             }
         }
-        /*stage('Build and Execute JS') {
+        stage('Build and Execute JS') {
             steps {
                 script {
                     def scriptResult = bat(script: "node test.js", returnStatus: true)
@@ -27,7 +27,7 @@ pipeline {
                     }
                 }
             }
-        }*/
+        }
          stage('Afficher un message HTML') {
             steps {
                 script {
