@@ -25,7 +25,7 @@ stage('Build and Execute JS') {
             }
         }*/
                 // Remplacez la ligne suivante pour exécuter votre fichier batch
-                bat 'votre-fichier.bat'
+                bat 'test.js'
             
     }
 }
