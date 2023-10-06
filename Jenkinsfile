@@ -56,13 +56,15 @@ pipeline {
                 }
             }
         }*/
-stage('Afficher un message HTML') {
+    stage('Add Div to HTML') {
             steps {
-                script {
-                    currentBuild.description = '<h1>Hello</h1>'
+              script {
+                    def htmlContent = readFile('testDiv.html')
+                    htmlContent = htmlContent.replaceFirst('<!-- Your placeholder -->', '<div>Your Div Content</div>')
+                    writeFile file: 'testDiv.html', text: htmlContent
                 }
             }
         }
-        //fink
+        //fin
     }
 }
