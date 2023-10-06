@@ -21,7 +21,7 @@ stage('Build and Execute JS') {
                 echo 'Le script js a ete execute avec succes'
             } else {
                 currentBuild.result = 'FAILURE'
-                error('Échec de l\'exécution du script JS')
+                error('Echec de l\'execution du script JS')
             }
         }
     }
