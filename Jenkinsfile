@@ -57,13 +57,7 @@ pipeline {
             }
         }*/
  
-        stage('Add Div to HTML') {
-            steps {
-                 script {
-                bat 'node test.js'
-              }
-            }
-        }
+       
         //fin
     }
 }
