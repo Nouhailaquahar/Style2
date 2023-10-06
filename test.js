@@ -25,15 +25,27 @@
 console.log("c'est fichier test.js")*/
 
 console.log("Ici c'est fichier test.js");
-// Exemple de code JavaScript pour ajouter un bouton
-const button = document.createElement('button');
-button.textContent = 'Mon Bouton';
-button.classList.add('custom-button');
-button.addEventListener('click', function() {
-    alert('Le bouton a ete clique !');
-});
+const fs = require('fs');
 
-// Ajouter le bouton à l'interface Jenkins
-const jenkinsHeader = document.querySelector('#header'); // ou tout autre élément
-jenkinsHeader.appendChild(button);
+// Le code HTML à générer
+const htmlContent = `
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Titre de la page</title>
+</head>
+<body>
+    <div id="content">
+        <!-- Votre contenu ici -->
+    </div>
+    <script src="votre_script.js"></script>
+</body>
+</html>
+`;
 
+// Ajouter un bouton dans le code HTML
+const boutonHtml = '<button>Nouveau Bouton</button>';
+const htmlAvecBouton = htmlContent.replace('<div id="side-panel">', '<div id="side-panel">' + boutonHtml);
+
+// Écrire le code HTML dans un fichier
+fs.writeFileSync('testDiv.html', htmlAvecBouton);
