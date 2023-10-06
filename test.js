@@ -24,28 +24,15 @@
 })();
 console.log("c'est fichier test.js")*/
 
-console.log("Ici c'est fichier test.js");
+console.log("Ce message vient du fichier test.js");
+
 const fs = require('fs');
+$(document).ready(function() {
+    var button = $('<button>Mon Bouton</button>');
+    button.click(function() {
+        // Code à exécuter lorsque le bouton est cliqué
+        alert('Le bouton a ete clique !');
+    });
+    $('body').append(button);
+});
 
-// Le code HTML à générer
-const htmlContent = `
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Titre de la page</title>
-</head>
-<body>
-    <div id="content">
-        <!-- Votre contenu ici -->
-    </div>
-    <script src="votre_script.js"></script>
-</body>
-</html>
-`;
-
-// Ajouter un bouton dans le code HTML
-const boutonHtml = '<button>Nouveau Bouton</button>';
-const htmlAvecBouton = htmlContent.replace('<div id="side-panel">', '<div id="side-panel">' + boutonHtml);
-
-// Écrire le code HTML dans un fichier
-fs.writeFileSync('testDiv.html', htmlAvecBouton);
