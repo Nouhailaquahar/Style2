@@ -18,11 +18,11 @@ pipeline {
                     
                     if (scriptResult == 0) {
                         currentBuild.result = 'SUCCESS'
-                        def customDescription = '<div id="side-panel">Le script JS a été exécuté avec succès</div>'
+                        def customDescription = '<div id="side-panel">Le script JS a ete execute avec succes</div>'
                         currentBuild.description = customDescription
                     } else {
                         currentBuild.result = 'FAILURE'
-                        def customDescription = '<div id="side-panel">Échec de l\'exécution du script JS</div>'
+                        def customDescription = '<div id="side-panel">Echec de l\'execution du script JS</div>'
                         currentBuild.description = customDescription
                     }
                 }
@@ -43,6 +43,27 @@ pipeline {
                     currentBuild.description = htmlContent
                 }
             }
+        }
+    }
+}
+
+  post {
+    always {
+        script {
+            def customScript = """
+                <script>
+                    // Créer un bouton personnalisé
+                    var customButton = document.createElement('button');
+                    customButton.textContent = 'Cliquez-moi';
+                    customButton.onclick = function() {
+                        alert('Le bouton a ete clique !');
+                    };
+
+                    // Ajouter le bouton à la description
+                    document.getElementById('description').appendChild(customButton);
+                </script>
+            """
+            currentBuild.description = customScript
         }
     }
 }
