@@ -60,10 +60,8 @@ pipeline {
         stage('Add Div to HTML') {
             steps {
                  script {
-                    def customCssUrl = 'https://raw.githubusercontent.com/Nouhailaquahar/Style2/main/custom.css'
-                    def customJsUrl = 'https://raw.githubusercontent.com/Nouhailaquahar/Style2/main/test.js'
-                    currentBuild.description = "<style>@import url('$customCssUrl');</style><script src='$customJsUrl'></script>"
-                }
+                bat 'node test.js'
+              }
             }
         }
         //fin
