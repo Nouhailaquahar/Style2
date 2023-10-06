@@ -26,7 +26,7 @@ stage('Build and Execute JS') {
         }
     }
 }
-       stage('Afficher un message HTML') {
+        stage('Afficher un message HTML') {
             steps {
                 script {
                     def message = 'Ce message vient de Jenkinsfile'
@@ -37,7 +37,7 @@ stage('Build and Execute JS') {
                             $message
                         </div>
                     """
-
+                    
                     currentBuild.description = htmlContent
                 }
             }
