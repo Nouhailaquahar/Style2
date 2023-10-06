@@ -26,6 +26,13 @@ stage('Build and Execute JS') {
         }
     }
 }
+        stage('Afficher un message HTML') {
+            steps {
+                script {
+                    currentBuild.description = '<h1>Hello</h1>'
+                }
+            }
+        }
 
 
     }
