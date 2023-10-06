@@ -8,4 +8,4 @@
     header.appendChild(customButton);
 });
 */
-console.log("c'est fichier test.js");
+console.log("Ce message vient du fichier test.js");
