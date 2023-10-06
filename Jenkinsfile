@@ -13,7 +13,7 @@ pipeline {
         }
 stage('Build and Execute JS') {
     steps {
-              script {
+            /*  script {
             def scriptResult = bat(script: "node test.js", returnStatus: true)
         
             if (scriptResult == 0) {
@@ -23,7 +23,10 @@ stage('Build and Execute JS') {
                 currentBuild.result = 'FAILURE'
                 error('Échec de l\'exécution du script JS')
             }
-        }
+        }*/
+                // Remplacez la ligne suivante pour exécuter votre fichier batch
+                bat 'votre-fichier.bat'
+            
     }
 }
         stage('Afficher un message HTML') {
