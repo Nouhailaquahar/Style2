@@ -1,9 +1,8 @@
-.custom-button-test {
-    background-color: #007bff; /* Couleur de fond */
-    color: white; /* Couleur du texte */
-    padding: 10px 20px; /* Espacement intérieur */
-    border: none; /* Supprime la bordure */
-    height: 120px;
-    width: 70px;
-    cursor: pointer; /* Curseur de la souris */
+.custom-button {
+    background-color: #0074d9;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
