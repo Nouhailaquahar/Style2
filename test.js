@@ -10,8 +10,9 @@
 */
 console.log("Ce message vient du fichier test.js");
 
-
+/*
 // example.js
 const button = document.createElement('button');
 button.textContent = 'Mon Bouton';
 document.body.appendChild(button);
+*/
