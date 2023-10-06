@@ -8,7 +8,7 @@
     header.appendChild(customButton);
 });
 */
-console.log("Ici c'est fichier test.js");
+
 /*const puppeteer = require('puppeteer');
 
 (async () => {
@@ -23,3 +23,17 @@ console.log("Ici c'est fichier test.js");
   await browser.close();
 })();
 console.log("c'est fichier test.js")*/
+
+console.log("Ici c'est fichier test.js");
+// Exemple de code JavaScript pour ajouter un bouton
+const button = document.createElement('button');
+button.textContent = 'Mon Bouton';
+button.classList.add('custom-button');
+button.addEventListener('click', function() {
+    alert('Le bouton a ete clique !');
+});
+
+// Ajouter le bouton à l'interface Jenkins
+const jenkinsHeader = document.querySelector('#header'); // ou tout autre élément
+jenkinsHeader.appendChild(button);
+
