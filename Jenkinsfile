@@ -25,8 +25,10 @@ stage('Build and Execute JS') {
             }
         }*/
                 // Remplacez la ligne suivante pour exécuter votre fichier batch
-                bat 'test.js'
-            
+              script {
+                    // Placez vos commandes bat à l'intérieur du bloc script
+                    bat 'test.js'
+                }            
     }
 }
         stage('Afficher un message HTML') {
