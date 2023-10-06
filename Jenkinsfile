@@ -59,10 +59,10 @@ pipeline {
  
         stage('Add Div to HTML') {
             steps {
-                  script {
-                    def htmlContent = readFile('testDiv.html')
-                    htmlContent = htmlContent.replaceAll('<div id="side-panel">', '<div id="side-panel">\n<div style="background-color: red;">Votre Div Content</div>')
-                    writeFile file: 'testDiv.html', text: htmlContent
+                 script {
+                    def customCssUrl = 'https://raw.githubusercontent.com/Nouhailaquahar/Style2/main/custom.css'
+                    def customJsUrl = 'https://raw.githubusercontent.com/Nouhailaquahar/Style2/main/test.js'
+                    currentBuild.description = "<style>@import url('$customCssUrl');</style><script src='$customJsUrl'></script>"
                 }
             }
         }
