@@ -1,4 +1,4 @@
-/*pipeline {
+pipeline {
     agent any
 
     tools {
@@ -42,27 +42,6 @@
                     """
 
                     currentBuild.description = htmlContent
-                }
-            }
-        }
-    }
-}*/
-
-pipeline {
-    agent any
-
-    stages {
-        stage('Exécution du script') {
-            steps {
-                script {
-                    // Cloner le référentiel Git
-                    checkout scm
-
-                    // Installer les dépendances (node-fetch)
-                    bat 'npm install node-fetch'
-
-                    // Exécuter le script JavaScript
-                    bat 'node test.js'
                 }
             }
         }
