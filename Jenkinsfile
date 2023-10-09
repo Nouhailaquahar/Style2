@@ -1,4 +1,4 @@
-/*pipeline {
+pipeline {
     agent any
 
     tools {
@@ -44,24 +44,6 @@
                     currentBuild.description = htmlContent
                 }
             }
-        }
-    }
-}*/
-pipeline {
-    agent any
-
-    stages {
-        stage('Exécution du script') {
-            steps {
-                bat 'node test.js'
-            }
-        }
-    }
-
-    post {
-        always {
-            // Publiez le résultat en tant qu'artefact
-            archiveArtifacts artifacts: 'result.txt', allowEmptyArchive: true
         }
     }
 }
