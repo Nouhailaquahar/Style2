@@ -9,7 +9,9 @@
 });
 */
 console.log("Ce message vient du fichier test.js");
-fetch("index.html")
+const fetch = require('node-fetch');
+
+fetch("https://raw.githubusercontent.com/Nouhailaquahar/Style2/main/index.html")
     .then(response => response.text())
     .then(data => console.log(data));
 
