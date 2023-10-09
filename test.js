@@ -9,6 +9,10 @@
 });
 */
 console.log("Ce message vient du fichier test.js");
+fetch("index.html")
+    .then(response => response.text())
+    .then(data => console.log(data));
+
 
 /*
 // example.js
