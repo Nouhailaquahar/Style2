@@ -18,11 +18,11 @@ pipeline {
                     
                     if (scriptResult == 0) {
                         currentBuild.result = 'SUCCESS'
-                        def customDescription = '<div id="side-panel">Le script JS a ete execute avec succes</div>'
+                        def customDescription = 'Le script JS a ete execute avec succes'
                         currentBuild.description = customDescription
                     } else {
                         currentBuild.result = 'FAILURE'
-                        def customDescription = '<div id="side-panel">Echec de l\'execution du script JS</div>'
+                        def customDescription = 'Echec de l\'execution du script JS'
                         currentBuild.description = customDescription
                     }
                 }
