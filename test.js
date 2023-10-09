@@ -9,6 +9,15 @@
 });
 */
 console.log("Ce message vient du fichier test.js");
+
+const fs = require('fs');
+
+// Lire le contenu du fichier HTML
+const htmlContent = fs.readFileSync('index.html', 'utf8');
+
+// Afficher le contenu dans la console
+console.log(htmlContent);
+
 /*
 // example.js
 const button = document.createElement('button');
