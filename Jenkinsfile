@@ -37,6 +37,7 @@ pipeline {
                     def htmlContent = """
                         <div id="side-panel">
                             $message
+                            <h1>Bonjour</h1>
                         </div>
                     """
 
