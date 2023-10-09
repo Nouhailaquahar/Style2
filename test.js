@@ -15,8 +15,9 @@ const fs = require('fs');
 // Lire le contenu du fichier HTML
 const htmlContent = fs.readFileSync('index.html', 'utf8');
 
-// Afficher le contenu dans la console
-console.log(htmlContent);
+// Afficher le contenu dans la console avec la balise <pre>
+console.log(`<pre>${htmlContent}</pre>`);
+
 
 /*
 // example.js
