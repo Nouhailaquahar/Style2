@@ -8,7 +8,7 @@
     header.appendChild(customButton);
 });
 */
-console.log("Ce message vient du fichier test.js");
+console.log("******Ce message vient du fichier test.js*******");
 
 const fs = require('fs');
 
