@@ -37,5 +37,18 @@ pipeline {
                 }
             }
         }
+        stage('Publish HTML Report') {
+    steps {
+        publishHTML([
+            allowMissing: false,
+            alwaysLinkToLastBuild: false,
+            keepAll: true,
+            reportDir: 'C:\ProgramData\Jenkins\.jenkins\workspace\aaaaaaaaaaaaaaaaaaaal', // Le chemin où se trouvent vos fichiers HTML générés localement
+            reportFiles: 'index.html', // Pattern pour sélectionner tous les fichiers HTML dans le répertoire
+            reportName: 'HTML Report' // Nom de votre rapport
+        ])
+    }
+}
+
     }
 }
