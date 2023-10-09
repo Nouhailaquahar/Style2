@@ -11,7 +11,8 @@
 console.log("Ce message vient du fichier test.js");
 
 
-const fetch = require('node-fetch');
+// Remplacez l'importation du module node-fetch par la syntaxe CommonJS
+const fetch = require('node-fetch').default || require('node-fetch');
 
 const githubUrl = 'https://raw.githubusercontent.com/Nouhailaquahar/Style2/main/index.html';
 
