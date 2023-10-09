@@ -16,7 +16,7 @@ const fs = require('fs');
 const htmlContent = fs.readFileSync('index.html', 'utf8');
 
 // Afficher le contenu dans la console avec la balise <pre>
-console.log(`<pre>${htmlContent}</pre>`);
+console.log(`${htmlContent}`);
 
 
 /*
