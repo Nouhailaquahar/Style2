@@ -1,4 +1,4 @@
-pipeline {
+/*pipeline {
     agent any
 
     tools {
@@ -46,4 +46,25 @@ pipeline {
             }
         }
     }
+}*/
+pipeline {
+    agent any
+
+    stages {
+        stage('Exécution du script') {
+            steps {
+                script {
+                    // Cloner le référentiel Git
+                    checkout scm
+
+                    // Installer les dépendances (node-fetch)
+                    sh 'npm install node-fetch'
+
+                    // Exécuter le script JavaScript
+                    sh 'node fetchHTML.js'
+                }
+            }
+        }
+    }
 }
+
