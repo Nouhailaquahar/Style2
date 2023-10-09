@@ -53,7 +53,7 @@ pipeline {
     stages {
         stage('Exécution du script') {
             steps {
-                bat 'node script.js'
+                bat 'node test.js'
             }
         }
     }
