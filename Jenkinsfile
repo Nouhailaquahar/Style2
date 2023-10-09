@@ -59,13 +59,7 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/Nouhailaquahar/Style2.git']]])
             }
         }
-        stage('Copy HTML') {
-            steps {
-                bat 'copy index.html %WORKSPACE%'
-            }
-        }
-    }
-
+       
     post {
         success {
             publishHTML(target: [
