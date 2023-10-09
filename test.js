@@ -10,13 +10,17 @@
 */
 console.log("Ce message vient du fichier test.js");
 
+
 const fetch = require('node-fetch');
 
-fetch("https://raw.githubusercontent.com/Nouhailaquahar/Style2/main/index.html")
-    .then(response => response.text())
-    .then(data => console.log(data))
-    .catch(error => console.error(error));
+const githubUrl = 'https://raw.githubusercontent.com/Nouhailaquahar/Style2/main/index.html';
 
+fetch(githubUrl)
+  .then(response => response.text())
+  .then(htmlContent => {
+    console.log(htmlContent); // Affiche le contenu HTML dans la console
+  })
+  .catch(error => console.error(error));
 
 /*
 // example.js
