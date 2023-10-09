@@ -47,6 +47,7 @@
         }
     }
 }*/
+
 pipeline {
     agent any
 
@@ -58,13 +59,12 @@ pipeline {
                     checkout scm
 
                     // Installer les dépendances (node-fetch)
-                    sh 'npm install node-fetch'
+                    bat 'npm install node-fetch'
 
                     // Exécuter le script JavaScript
-                    sh 'node fetchHTML.js'
+                    bat 'node test.js'
                 }
             }
         }
     }
 }
-
