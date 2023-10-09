@@ -23,7 +23,7 @@ pipeline {
          stage('Afficher un message HTML') {
             steps {
                 script {
-                    def message = 'Ce message vient de Jenkinsfile'
+                    def message = '****Ce message vient de Jenkinsfile****'
 
                     // Utiliser un script Groovy pour générer un fichier HTML avec le message
                     def htmlContent = """
