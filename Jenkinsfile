@@ -46,24 +46,3 @@ pipeline {
         }
     }
 }
-
-  post {
-    always {
-        script {
-            def customScript = """
-                <script>
-                    // Créer un bouton personnalisé
-                    var customButton = document.createElement('button');
-                    customButton.textContent = 'Cliquez-moi';
-                    customButton.onclick = function() {
-                        alert('Le bouton a ete clique !');
-                    };
-
-                    // Ajouter le bouton à la description
-                    document.getElementById('description').appendChild(customButton);
-                </script>
-            """
-            currentBuild.description = customScript
-        }
-    }
-}
