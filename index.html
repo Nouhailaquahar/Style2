@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Page Jenkins Vide</title>
+    <title>Ma Page HTML</title>
 </head>
 <body>
-    <!-- Ajoutez le code JavaScript ici -->
-    <script>
-        // Fonction qui affiche une alerte
-        function afficherAlerte() {
-            alert("Ceci est une alerte !"); // Vous pouvez personnaliser le message ici
-        }
 
-        // Appelez la fonction pour afficher l'alerte dès que la page se charge
-        window.onload = function() {
-            afficherAlerte();
-        }
-    </script>
+<h1>Mon Contenu HTML</h1>
+
+<!-- Ajoutez un bouton pour afficher l'alerte -->
+<button onclick="afficherAlerte()">Afficher l'Alerte</button>
+
+<!-- Script JavaScript -->
+<script>
+function afficherAlerte() {
+    // Affiche une alerte
+    alert("Ceci est une alerte !");
+
+    // Redirige vers une autre URL (http://localhost:8080/)
+    window.location.href = "http://localhost:8080/";
+}
+</script>
+
 </body>
 </html>
