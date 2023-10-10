@@ -1,21 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Exécution de tous les pipelines Jenkins</title>
 </head>
-
 <body>
-<h1>Mon Contenu HTML</h1>
+    <h1>Exécution de tous les pipelines Jenkins</h1>
+    <button id="runPipelinesButton">Exécuter tous les pipelines</button>
 
-<!-- Script JavaScript -->
-<script>
-// Affichage d'une alerte 
-window.onload = function() {
-    alert("Ceci est une alerte !");
-    
-    // redirection
-    window.location.replace("http://localhost:8080/");
-}
-</script>
+    <script>
+        document.getElementById("runPipelinesButton").addEventListener("click", function() {
+            // Remplacez l'URL de Jenkins par l'URL de votre instance Jenkins
+            const jenkinsUrl = "http://localhost:8080/";
 
+            // Remplacez 'votre-utilisateur' et 'votre-mot-de-passe' par vos informations d'authentification Jenkins
+            const username = "nouhaila";
+            const password = "Nouha2106";
+
+            // Obtenez un jeton CSRF pour effectuer des actions Jenkins
+            fetch(`${jenkinsUrl}/crumbIssuer/api/json`, {
+                method: 'GET',
+                headers: {
+                    Authorization: 'Basic ' + btoa(username + ':' + password)
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Utilisez le jeton CSRF pour déclencher tous les pipelines
+                fetch(`${jenkinsUrl}/job/NOM_DU_JOB/build`, {
+                    method: 'POST',
+                    headers: {
+                        'Jenkins-Crumb': data.crumb,
+                        Authorization: 'Basic ' + btoa(username + ':' + password)
+                    }
+                })
+                .then(response => {
+                    if (response.status === 201) {
+                        alert("Tous les pipelines ont été déclenchés avec succès !");
+                    } else {
+                        alert("Erreur lors de l'exécution des pipelines : " + response.statusText);
+                    }
+                })
+                .catch(error => {
+                    console.error("Une erreur s'est produite : " + error);
+                });
+            })
+            .catch(error => {
+                console.error("Une erreur s'est produite lors de la récupération du jeton CSRF : " + error);
+            });
+        });
+    </script>
 </body>
 </html>
