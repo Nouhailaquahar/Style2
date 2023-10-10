@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Ma Page</title>
@@ -9,6 +10,11 @@
         // Fonction qui affiche une alerte
         function afficherAlerte() {
             alert("Ceci est une alerte !"); // Vous pouvez personnaliser le message ici
+        }
+        
+        // Appelez la fonction pour afficher l'alerte dès que la page se charge
+        window.onload = function() {
+            afficherAlerte();
         }
     </script>
 </body>
