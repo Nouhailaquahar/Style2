@@ -4,12 +4,24 @@
     <title>Ma Page HTML</title>
 </head>
 
-    <body>
+<body>
+<body>
 
 <h1>Mon Contenu HTML</h1>
 
-<!-- Ajoutez un lien hypertexte pour revenir à http://localhost:8080/ -->
-<a href="http://localhost:8080/">Revenir à http://localhost:8080/</a>
+<!-- Ajoutez un bouton pour afficher l'alerte -->
+<button onclick="afficherAlerte()">Afficher l'Alerte</button>
+
+<!-- Script JavaScript -->
+<script>
+function afficherAlerte() {
+    // Affiche une alerte
+    alert("Ceci est une alerte !");
+    
+    // Redirige vers une autre URL (http://localhost:8080/)
+    window.location.replace("http://localhost:8080/");
+}
+</script>
 
 </body>
 </html>
